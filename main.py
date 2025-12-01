@@ -2786,7 +2786,9 @@ def render_feishu_content(
             formatted_title = format_title_for_platform(
                 "feishu", title_data, show_source=True
             )
-            text_content += f"  {j}. {formatted_title}\n\n"
+            text_content += f"  {j}. {formatted_title}\n"
+            # 每条新闻后添加短分隔线，增加视觉间距
+            text_content += "  -\n"
 
         if i < len(report_data["stats"]) - 1:
             text_content += f"\n{CONFIG['FEISHU_MESSAGE_SEPARATOR']}\n\n"
@@ -2819,7 +2821,9 @@ def render_feishu_content(
                 formatted_title = format_title_for_platform(
                     "feishu", title_data_copy, show_source=False
                 )
-                text_content += f"  {j}. {formatted_title}\n\n"
+                text_content += f"  {j}. {formatted_title}\n"
+                # 每条新闻后添加短分隔线，增加视觉间距
+                text_content += "  -\n"
 
             text_content += "\n"
 
