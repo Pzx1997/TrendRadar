@@ -2788,7 +2788,8 @@ def render_feishu_content(
             )
             text_content += f"  {j}. {formatted_title}\n"
             # 每条新闻后添加短分隔线，增加视觉间距
-            text_content += "  -\n"
+            if j < len(stat["titles"]):
+                text_content += "\n"
 
         if i < len(report_data["stats"]) - 1:
             text_content += f"\n{CONFIG['FEISHU_MESSAGE_SEPARATOR']}\n\n"
@@ -2823,7 +2824,8 @@ def render_feishu_content(
                 )
                 text_content += f"  {j}. {formatted_title}\n"
                 # 每条新闻后添加短分隔线，增加视觉间距
-                text_content += "  -\n"
+                if j < len(source_data["titles"]):
+                    text_content += "\n"
 
             text_content += "\n"
 
